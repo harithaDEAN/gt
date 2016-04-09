@@ -1,0 +1,10 @@
+// 3.2	USING JAVA PLUGIN
+
+apply plugin: 'java' 
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.training.gradle.SwitchStoplight'
+    }
+}

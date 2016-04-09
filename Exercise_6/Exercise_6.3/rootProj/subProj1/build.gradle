@@ -1,0 +1,17 @@
+//  6.3	WORKING WITH MULTIPLE PROJECTS : subProj1
+
+println "Configuration Phase Begins for project: $project.name"
+
+
+task subTask {
+	
+	doLast {
+		println "In project: $project.name running task $name"
+	}
+}
+
+task independentTask {
+	doLast {
+		println "IndependentTask in project: $project.name running task $name"
+	}
+}

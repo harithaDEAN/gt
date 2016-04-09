@@ -1,0 +1,44 @@
+//  6.2	CREATING A CUSTOM INCREMENTAL BUILD TASK
+
+task syncWarmStart(type: SyncServers) {
+    inputDir = file('ActiveServer')
+    outputDir = file('WarmStartServer')
+}
+
+
+class SyncServers extends DefaultTask {
+    @InputDirectory
+    def File inputDir
+
+    @OutputDirectory
+    def File outputDir
+
+
+    @TaskAction
+    void doSync(IncrementalTaskInputs changes) {
+	
+		if (changes.incremental == true)  {
+			println "Some output files need updating"
+		}
+		else {
+			println "All output files need updating"
+			cleanOutDir()
+		}
+
+        changes.outOfDate { f ->
+            println "${f.file.name} was updated in $inputDir" 
+            def ourDirFile = new File(outputDir, f.file.name)
+            ourDirFile.text = f.file.text
+        }
+
+        changes.removed { f ->
+            println "${f.file.name} was deleted from $inputDir" 
+            def ourDirFile = new File(outputDir, f.file.name)
+            ourDirFile.delete()
+        }
+    }
+	
+	def cleanOutDir()  {
+		project.delete(outputDir.listFiles())
+	}
+}

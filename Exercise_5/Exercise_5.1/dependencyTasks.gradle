@@ -1,0 +1,15 @@
+// 5.1	CREATING A GRADLE SCRIPT PLUGIN
+
+task runNext {
+    dependsOn 'needsRunFirst'
+    doLast {
+        println "running task $name \n"
+    }
+}
+
+task runFirst {
+    doLast {
+        println "running task $name \n"
+    }
+}
+

@@ -1,0 +1,4 @@
+I data from the last batch file run
+the batch job runs every night
+it has important information needed by the applications running on the server
+need to keep this synced with the warm start server.

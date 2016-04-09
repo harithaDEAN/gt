@@ -1,0 +1,7 @@
+// 3.4	THE GRADLE WRAPPER
+
+task wrapper(type: Wrapper) {
+   gradleVersion = '2.10'
+   archivePath = "gradleArchive"     // relative to the USER_HOME\.gradle folder
+   distributionPath = "gradleDist"   // relative to the USER_HOME\.gradle folder
+}

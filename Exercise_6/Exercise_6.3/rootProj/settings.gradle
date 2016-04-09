@@ -1,0 +1,3 @@
+//  6.3	WORKING WITH MULTIPLE PROJECTS
+
+include 'subProj1', 'subProj2'

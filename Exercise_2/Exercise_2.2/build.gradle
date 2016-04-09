@@ -1,0 +1,20 @@
+// Lab 2.2: GRADLE BUILD LIFE CYCLE : RootProject
+
+println "Configuration Phase Begins for project: $project.name"
+println "\tread through build.gradle setting up properties and dependencies"
+
+allprojects {
+	afterEvaluate { proj ->
+		println "Configuration Phase Ends for project: $proj.name"
+	}
+}
+
+task configAndExecute  {
+	println "\tconfigAndExecute Task: setting up my group and description properties"
+ 	description "Description of configAndExecute task"
+    group "Lab 2.2 Group"   
+	 
+	 doFirst {
+		println "configAndExecute Task: Execute Phase, doing work!"
+	 }
+}

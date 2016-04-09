@@ -1,0 +1,6 @@
+// Lab 2.2: GRADLE BUILD LIFE CYCLE 
+
+println 'The settings.gradle file is executed during the initialization phase.'
+println "\t Initialization: sets the Project Descriptor"
+println "\t Initialization: sets the root project to: $rootProject.name"
+println "\t Initialization: sets the root project directory to: $rootProject.projectDir"

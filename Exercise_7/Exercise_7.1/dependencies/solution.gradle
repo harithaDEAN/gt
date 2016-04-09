@@ -1,0 +1,16 @@
+// 7.1 EXTERNAL DEPENDENCY MANAGEMENT 
+
+apply plugin: 'java'
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+}
+
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+  
+    testCompile 'log4j:log4j:1.2.17'
+    testCompile 'junit:junit:[4.8,)'
+    testRuntime files('testFiles\\testdata.txt')
+}

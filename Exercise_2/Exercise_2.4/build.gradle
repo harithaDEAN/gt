@@ -1,0 +1,62 @@
+// 2.4	ACTION DEPENDENCIES BETWEEN DIFFERENT TASKS
+
+// DependsOn By Tasks
+// -----------------------
+
+task runNext {
+    dependsOn 'needsRunFirst'
+    doLast {
+        println "running task $name \n"
+    }
+}
+
+task runFirst {
+    doLast {
+        println "running task $name \n"
+    }
+}
+
+
+task needsRunFirst {
+    dependsOn runFirst
+    doLast {
+        println "running task $name \n"
+    }
+}
+
+
+// Finalized By Tasks
+// -----------------------
+task runWebApp {
+    finalizedBy "closeAppServer"
+    doLast{
+        println "runWebApp: Start Application Server "
+        println "runWebApp: Navigate to app URL \n"
+	}
+}
+
+task closeAppServer  {
+    doLast {
+        println "closeAppServer: Stop Applicaiton Server \n"
+    }
+}
+
+
+// MustRonAfter Tasks
+// -----------------------
+
+
+task compileCode {
+    mustRunAfter "cleanLastBuild"
+    doLast{
+        println "running task $name \n"
+   }
+}
+
+task cleanLastBuild {
+    doLast {
+        println "running task $name \n"
+   }
+}
+
+

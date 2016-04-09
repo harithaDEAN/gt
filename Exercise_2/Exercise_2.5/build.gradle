@@ -1,0 +1,17 @@
+// 2.5	DYNAMIC TASKS
+
+println "Configuration Phase Begins"
+println '\tDynamically create a task newOne and add it to  our project'
+
+project.task('newOne') << {
+			println "I'm dynamically created task $name !"
+		}
+
+task foundationTask  {
+	doLast {
+		println "Adding the Foundation \n"
+	}
+}
+
+println '\tAnd dynamically create a dependency on an existing task'
+newOne.dependsOn foundationTask

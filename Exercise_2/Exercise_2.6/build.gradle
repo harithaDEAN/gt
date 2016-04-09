@@ -1,0 +1,23 @@
+// 2.6	ADDING NEW PROPERTIES
+
+println "Configuration Phase Begins"
+
+String projVar = "local project scope var"
+
+//project.ext.newProjProp = 45
+//println "\t Just added newProjProp with value $project.newProjProp"
+
+
+task addProps  {
+	doLast {
+		String taskVar = "local task scope var"
+		println "addProps: access project scope variables: $projVar"
+		println "addProps: access task scope variables: $taskVar"
+		println "addProps: access new task property $newTaskProp"
+	}
+	//println "Config: Cannot access task scope variables: $taskVar"
+}
+println "\t Access project scope variables: $projVar"
+//println "\t Cannot access task scope variables: $taskVar"
+
+addProps.ext.newTaskProp = 55

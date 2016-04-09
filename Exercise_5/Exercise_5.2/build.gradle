@@ -1,0 +1,15 @@
+// 5.2	CREATING A GRADLE BINARY PLUGIN
+// Use the plugin build script
+
+apply plugin: SimplePlugin
+
+class SimplePlugin implements Plugin<Project>  {
+
+	void apply(Project proj)  {
+		String myName = "SimplePlugin:"
+		proj.task('simple')  << {
+			println "$myName defined in build script with task Simple"
+			println "$myName running task Simple \n"
+		}
+	}
+}

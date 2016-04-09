@@ -1,0 +1,8 @@
+M2016-03-19 14:01:37 INFO  StoplightTest:18 - testRuntimeDependency Entered 
+’2016-03-19 14:01:37 INFO  StoplightTest:21 - using test data file: C:\GradleTraining\Exercise_7\Exercise_7.1\dependencies\TestFiles\testdata.txt
+a2016-03-19 14:01:37 INFO  StoplightTest:30 - got Test Data: [Red, Yellow, Green, Blue, Unknown]
+J2016-03-19 14:01:37 INFO  StoplightTest:32 - running with test data: Red
+M2016-03-19 14:01:37 INFO  StoplightTest:32 - running with test data: Yellow
+L2016-03-19 14:01:37 INFO  StoplightTest:32 - running with test data: Green
+K2016-03-19 14:01:37 INFO  StoplightTest:32 - running with test data: Blue
+N2016-03-19 14:01:37 INFO  StoplightTest:32 - running with test data: Unknown

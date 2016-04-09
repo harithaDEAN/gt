@@ -1,0 +1,26 @@
+// Lab 2.1: GRADLE BUILD SCRIPTS 
+
+task firstTask {            // create an instance of org.gradle.api.Task
+	description "Description of firstTask"
+    group "Lab 2.1 Group"   // create a group for this task
+    doLast {                // add an action to do work
+        println 'I AM the First Task!'
+		println "\tAccessing Project's properties directly project.projectDir:  $project.projectDir"
+    }
+}
+
+
+task secondTask {           // create an instance of org.gradle.api.Task
+    setDescription "Description of secondTask"
+    setProperty('group', 'Lab 2.1 Group')   // add to the same group
+    doFirst {
+		println 'I\'m the second task, I try harder.'
+		println "\tAccessing Project's properties with method project.getProjectDir(): ${project.getProjectDir()}"
+    }
+}
+
+task thirdTask << {           // create an instance of org.gradle.api.Task
+	println "I'm the third task, I get pampered!"
+	println "\tAccessing Task's name properties directly: $name"
+}
+

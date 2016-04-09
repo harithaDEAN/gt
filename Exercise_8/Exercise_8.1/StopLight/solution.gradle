@@ -1,0 +1,12 @@
+//8.1	ADDING AND EXECUTING JUNIT TESTS
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Add at least version 4.8 of JUnit as dependency.
+    testCompile 'junit:junit:[4.8,)'
+}

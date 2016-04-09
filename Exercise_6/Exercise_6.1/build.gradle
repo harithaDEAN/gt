@@ -1,0 +1,23 @@
+// 6.1	CREATING AND EXECUTING A CUSTOM TASK CLASS
+
+task workHard(type: customTask) {
+	effort = "hard work"
+}
+
+task workEasy(type: customTask) {
+	effort = "easy work"
+}
+
+task offWork(type: customTask) {
+	effort = "no work"
+}
+
+
+class customTask extends DefaultTask  {
+	String effort = "unknown"
+	
+	@TaskAction
+	def doWork()  {
+		println "Task $name is doing $effort!"
+	}
+}

@@ -1,0 +1,51 @@
+// 5.1	CREATING A GRADLE SCRIPT PLUGIN
+
+
+
+// DependsOn By Tasks in dependencyTasks.gradle
+// --------------------------------------------
+
+task needsRunFirst {
+    dependsOn 'runFirst'
+    doLast {
+        println "running task $name \n"
+    }
+}
+apply from: 'dependencyTasks.gradle'
+
+
+// Finalized By Tasks
+// -----------------------
+task runWebApp {
+    finalizedBy "closeAppServer"
+    doLast{
+        println "runWebApp: Start Application Server "
+        println "runWebApp: Navigate to app URL \n"
+	}
+}
+
+task closeAppServer  {
+    doLast {
+        println "closeAppServer: Stop Applicaiton Server \n"
+    }
+}
+
+
+// MustRonAfter Tasks
+// -----------------------
+
+
+task compileCode {
+    mustRunAfter "cleanLastBuild"
+    doLast{
+        println "running task $name \n"
+   }
+}
+
+task cleanLastBuild {
+    doLast {
+        println "running task $name \n"
+   }
+}
+
+

@@ -1,0 +1,19 @@
+// Lab 2.3: ACTION DEPENDENCIES IN A SINGLE TASK
+
+
+task firstOrLast  {
+
+	doLast {
+		println "doLast - 1: Executing! "
+	}
+	doFirst {
+		println "doFirst - 1: Executing! "
+	}
+	doLast {
+		println "doLast - 2: Executing! "
+	}
+	doFirst {
+		println "doFirst - 2: Executing! "
+	}
+}
+
